@@ -4,21 +4,23 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 
-import NavBar from "./components/NavigationBar";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div>
         <BrowserRouter>
-        <NavBar /> 
+        <NavBar pages={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }, { name:"Contact", path: "/contact"}]}/> 
           <Routes>
             <Route index element={<Home />}></Route>
             <Route path="/about" element={<About />}>
@@ -32,6 +34,9 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
+      </div>
+      <div>
+        <Footer /> 
       </div>
     </>
   );
