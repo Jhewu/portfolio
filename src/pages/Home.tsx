@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 function Home() {
   return (
     <>
+    <Container> 
       {/* Hero Section */}
       <header className="hero-section text-center text-light d-flex align-items-center" style={{ height: '80vh', backgroundColor: '#343a40' }}>
         <Container>
@@ -96,6 +97,7 @@ function Home() {
           <a href="/about" className="text-light"> About</a>
         </p>
       </footer>
+      </ Container> 
     </>
   );
 }
